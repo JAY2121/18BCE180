@@ -1,0 +1,21 @@
+import numpy as np
+n=int(input())
+for i in range(n):
+    k=int(input())
+    a=[]
+    for j in range(k):
+        l=input()
+        a.append([int(b) for b in l.split()])
+    count=0;
+    for j in range(k):
+        if len(set(a[j]))!=k:
+            count+=1
+    count1=0
+    for j in range(k):
+        l=[]
+        for m in range(k):
+            l.append(a[m][j])
+        if len(set(l))!=k:
+            count1+=1
+    a=np.array(a)
+    print("Case #"+str(i+1)+":",a.trace(),count,count1)
